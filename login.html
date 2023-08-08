@@ -1,19 +1,31 @@
 <html>
 <head>
   <title>LOGIN</title>
+  <script>
+  user_id = '홍길동'
+  user_pwd = 22100808
+  
+  function checkLogin(){
+    var inputId = document.getElementById('inId').value
+    var inputPwd = document.getElementById('inPw').value
+    
+    if ((inputId === user_id) && (parseInt(inputPwd) === user_pwd)){
+      alert('로그인 성공')
+      window.location.href = "nextPage.html"
+    } else{ alert('아이디 또는 비밀번호가 일치하지 않습니다.')}
+  }
+  </script>
 </head>
 
 <body class ="body">
-  <div class = "login-page">
-  <section class="login-section">
-  <h2 class="login-box">로그인</h2>
   <h1 class="LOGIN">LOGIN</h1>
   <form class = "login-box">
     <div class = "input-box">
-      <input id="inId" type="text" class="input-default" placeholder="아이디"/>
+      <input id="inId" type="text" class="input-default" placeholder="이름"/>
     </div>
     <div class="input-box">
-      <input id="inPw" type="password" class="input-default"
-<a href="nextPage.html">'nextPage'로 이동</a>
+      <input id="inPw" type="password" class="input-default" placeholder="학번"/>
+    </div>
+    <button onclick='checkLogin()'>로그인</button>
+  </form>
 </body>
-</html>
