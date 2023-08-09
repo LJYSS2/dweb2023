@@ -55,7 +55,7 @@
       const daysInMonth = new Date(year, month + 1, 0).getDate();
       const firstDay = new Date(year, month, 1).getDay();
 
-      let html = '<table><tr><th>ÀÏ</th><th>¿ù</th><th>È­</th><th>¼ö</th><th>¸ñ</th><th>±Ý</th><th>Åä</th></tr><tr>';
+      let html = '<table><tr><th>일</th><th>월</th><th>화­</th><th>수</th><th>목</th><th>금</th><th>토</th></tr><tr>';
 
       for (let i = 0; i < firstDay; i++) {
         html += '<td></td>';
