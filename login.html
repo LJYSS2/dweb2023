@@ -1,6 +1,52 @@
 <html>
 <head>
   <title>LOGIN</title>
+  
+    <style>
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-image: url('https://github.com/LJYSS2/dweb2023/blob/main/background.gif');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-opacity: 0.5;
+    }
+    .login-box {
+      margin-top: 30%;
+      width: 340px;
+      height: 110px;
+      box-sizing: border-box;
+      padding: 20px;
+      background-color: var(--transw);
+      box-shadow: var(--shadow);
+      border-radius: 20px;
+      transition: var(--trans);
+    }
+    .login-box:hover {
+      background-color: var(--transwo);
+      transform: scale(1.05, 1.05);
+    }
+    .login-form .btn {
+      opacity: 0.7;
+      font-weight: 500;
+      border: none;
+      box-shadow: var(--shadow);
+      border-radius: 12px;
+      padding: 8px;
+      background-color: wheat;
+      transition: var(--trans);
+    }
+    .login-form .btn:hover {
+      opacity: 1;
+      box-shadow: var(--shadow);
+    }
+
+  </style>
+
   <script>
   user_id = '홍길동'
   user_pwd = 22100808
@@ -11,21 +57,18 @@
     
     if ((inputId === user_id) && (parseInt(inputPwd) === user_pwd)){
       alert('로그인 성공')
-      window.location.href = "https://github.com/LJYSS2/dweb2023/blob/main/nextPage.html"
+      document.write(location.href)
+      window.location.href = "nextPage.html"
     } else{ alert('아이디 또는 비밀번호가 일치하지 않습니다.')}
   }
   </script>
 </head>
 
-<body class ="body">
-  <h1 class="LOGIN">LOGIN</h1>
-  <form class = "login-box">
-    <div class = "input-box">
-      <input id="inId" type="text" class="input-default" placeholder="이름, 홍길동"/>
-    </div>
-    <div class="input-box">
-      <input id="inPw" type="password" class="input-default" placeholder="학번, 22100808"/>
-    </div>
-    <button onclick='checkLogin()'>로그인</button>
-  </form>
-</body>
+<body>
+  <div class="login-box">
+    <form class="login-form">
+    <input id="inId" type="text" class="input-default" placeholder="이름, 홍길동"/>
+    <input id="inPw" type="password" class="input-default" placeholder="학번, 22100808"/>
+    <button class ="btn" onclick='checkLogin()'>로그인</button>
+    </form></div></body>
+</html>
