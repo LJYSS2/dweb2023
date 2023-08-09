@@ -1,0 +1,87 @@
+<html>
+<head>
+  <title>Calendar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('background.gif');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .calendar-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #f2f2f2;
+      padding: 20px;
+      width: 340px;
+      margin: auto;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 300px;
+      margin: auto;
+    }
+    th, td {
+      text-align: center;
+      padding: 10px;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    td {
+      cursor: pointer;
+    }
+    td.today {
+      background-color: #ff6b6b;
+    }
+    h1 {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<div class="calendar-box">
+  <h1>Diary</h1>
+  <div id="calendarContainer"></div>
+</div>
+
+  <script>
+    function createCalendar(year, month) {
+      const calendarContainer = document.getElementById('calendarContainer');
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+      const firstDay = new Date(year, month, 1).getDay();
+
+      let html = '<table><tr><th>일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th></tr><tr>';
+
+      for (let i = 0; i < firstDay; i++) {
+        html += '<td></td>';
+      }
+
+      for (let day = 1; day <= daysInMonth; day++) {
+        const currentDate = new Date();
+        const cellClass = (currentDate.getFullYear() === year && currentDate.getMonth() === month && currentDate.getDate() === day) ? 'today' : '';
+
+        html += `<td class="${cellClass}" onclick="handleCellClick(${year}, ${month}, ${day})">${day}</td>`;
+
+        if (new Date(year, month, day).getDay() === 6) {
+          html += '</tr><tr>';
+        }
+      }
+
+      html += '</tr></table>';
+      calendarContainer.innerHTML = html;
+    }
+
+    function handleCellClick(year, month, day) {
+      window.location.href = "diary.html"
+    }
+
+    const currentDate = new Date();
+    createCalendar(currentDate.getFullYear(), currentDate.getMonth());
+  </script>
+</body>
+</html>
