@@ -55,7 +55,7 @@
       const daysInMonth = new Date(year, month + 1, 0).getDate();
       const firstDay = new Date(year, month, 1).getDay();
 
-      let html = '<table><tr><th>ÀÏ</th><th>¿ù</th><th>È­</th><th>¼ö</th><th>¸ñ</th><th>±İ</th><th>Åä</th></tr><tr>';
+      let html = '<table><tr><th>Ã€Ã</th><th>Â¿Ã¹</th><th>ÃˆÂ­</th><th>Â¼Ã¶</th><th>Â¸Ã±</th><th>Â±Ã</th><th>Ã…Ã¤</th></tr><tr>';
 
       for (let i = 0; i < firstDay; i++) {
         html += '<td></td>';
@@ -77,7 +77,7 @@
     }
 
     function handleCellClick(year, month, day) {
-      window.location.href = "diary.html"
+      window.location.href = "https://github.com/LJYSS2/dweb2023/blob/main/diary.html"
     }
 
     const currentDate = new Date();
