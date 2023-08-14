@@ -1,20 +1,38 @@
 <html>
 <head>
   <title>LOGIN</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
     <style>
+    
     body {
       margin: 0;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      background-image: url('https://github.com/LJYSS2/dweb2023/blob/main/background.gif?raw=true');
+      background-image: url('background.gif');
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
       background-opacity: 0.5;
     }
+    .centered-box {
+      background-color: rgba(255, 192, 203, 0.7);
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+  
+    .centered-text {
+      font-size: 48px;
+      font-weight: bold;
+      color: white;
+    }
+    .pink-text {
+    color: #ff1493;
+    }  
     .login-box {
       margin-top: 30%;
       width: 340px;
@@ -49,7 +67,7 @@
 
   <script>
   user_id = '홍길동'
-  user_pwd = 22100808
+  user_pwd = 0808
   
   function checkLogin(){
     var inputId = document.getElementById('inId').value
@@ -64,10 +82,12 @@
 </head>
 
 <body>
-  <div class="login-box">
+    <div class="centered-box">
+    <div class="centered-text">Hello</br>This is <span class="pink-text">"Diary"</span> Record</div></div>
+    <div class="login-box">
     <form class="login-form">
     <input id="inId" type="text" class="input-default" placeholder="이름, 홍길동"/>
-    <input id="inPw" type="password" class="input-default" placeholder="학번, 22100808"/>
+    <input id="inPw" type="password" class="input-default" placeholder="학번, 0808"/>
     <button class ="btn" onclick='checkLogin()'>로그인</button>
     </form></div></body>
 </html>
